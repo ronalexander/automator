@@ -51,7 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	do shell script "sudo launchctl stop com.apple.syslogd" with administrator privileges	do shell script "sudo launchctl stop com.apple.aslmanager" with administrator privileges	do shell script "sudo rm -rf /var/log/asl/*" with administrator privileges	do shell script "sudo find /var/log -type f -empty -delete" with administrator privileges	do shell script "sudo launchctl start com.apple.syslogd" with administrator privileges	return inputend run</string>
+					<string>on run {input, parameters}	do shell script "sudo launchctl stop com.apple.syslogd" with administrator privileges	do shell script "sudo launchctl stop com.apple.aslmanager" with administrator privileges	do shell script "sudo rm -rf /var/log/asl/*" with administrator privileges	do shell script "sudo find /var/log -type f -empty -delete" with administrator privileges	do shell script "sudo touch /var/log/system.log; sudo chown root:admin /var/log/system.log; sudo chmod 640 /var/log/system.log" with administrator privileges	do shell script "sudo launchctl start com.apple.syslogd" with administrator privileges	return inputend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
